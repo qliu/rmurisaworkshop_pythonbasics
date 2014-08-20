@@ -4,7 +4,7 @@ layout: default
 ---
 <div class="row page-header">
 	<div class="col-md-9">
-		<h1 class="text-primary">Object-Oriented Programming Concepts</h1>
+		<h1 class="text-primary">Object-Oriented Programming (OOP) Concepts</h1>
 	</div>
 	<div class="col-md-3">
 		<a href="/rmurisaworkshop_pythonbasics/content/1_programmingbasics/" class="btn btn-outline btn-warning">Back</a> 
@@ -14,32 +14,220 @@ layout: default
 
 <div class="row">
 	<div class="col-lg-12">
-		<h3 class="text-info">Object-Oriented Programming Concepts</h3>
 		<div class="panel panel-default">
+			<h3 class="text-info">Object-Oriented Programming</h3>
+			<p>
+				<strong>Object-oriented programming (OOP)</strong> is a programming paradigm that represents the concept of "objects" 
+				that have data fields (attributes that describe the object) and associated procedures known as methods.
+				<br/>
+				<strong>Objects</strong>, which are usually instances of classes, 
+				are used to interact with one another to design applications and computer programs.
+				<br/>
+				C++, Objective-C, Smalltalk, Delphi, Java, Javascript, C#, Perl, Python, Ruby and PHP are examples of object-oriented programming languages
+			</p>
 			<div class="panel-body">
 				<!-- Nav tabs -->
 				<ul class="nav nav-pills">
-					<li class="active"><a href="#object-pills" data-toggle="tab">Object</a>
-					</li>
-					<li><a href="#class-pills" data-toggle="tab">Class</a>
-					</li>
-					<li><a href="#inheritance-pills" data-toggle="tab">Inheritance</a>
-					</li>
+					<li class="active"><a href="#object-pills" data-toggle="tab">Object</a></li>
+					<li><a href="#class-pills" data-toggle="tab">Class</a></li>
+					<li><a href="#inheritance-pills" data-toggle="tab">Inheritance</a></li>
 				</ul>
 
 				<!-- Tab panes -->
 				<div class="tab-content">
 					<div class="tab-pane fade in active" id="object-pills">
 						<h4>Object</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>
+							<strong>Real-world objects</strong>: <i class="fa fa-mobile-phone fa-2x"></i> <i class="fa fa-car fa-2x"></i> <i class="fa fa-paw fa-2x"></i>
+						</p>
+						<p>
+							Real-world objects share two characteristics: <strong><i>state</i></strong> and <strong><i></i>behavior</strong>.
+						</p>
+						<div class="row">
+							<div class="col-md-5">
+								<div class="panel panel-primary">
+									<div class="panel-heading">
+										State
+									</div>
+									<div class="panel-body">
+										<span class="btn btn-success">Name</span> <span class="btn btn-info">Color</span> <span class="btn btn-warning">Hungry</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2"><i class="fa fa-paw fa-5x"></div>
+							<div class="col-md-5">
+								<div class="panel panel-green">
+									<div class="panel-heading">
+										Behavior
+									</div>
+									<div class="panel-body">
+										<span class="btn btn-success">Barking</span> <span class="btn btn-info">Fetching</span> <span class="btn btn-warning">Wagging tail</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<p>
+							<strong>Software objects</strong> are conceptually similar to real world objects: they too consist of <strong><i>state</i></strong> and <strong><i></i>behavior</strong>.
+						</p>
+						<p>
+							An objects stores its state in <strong><i>fields</i></strong> and express its behavior through <strong><i>methods</i></strong>.
+							<br/>
+							Methods operate on an object's internal state and serve as the primary mechanism for object-to-object communication.
+						</p>
+						<div class="row">
+							<div class="col-md-5">
+								<div class="panel panel-primary">
+									<div class="panel-heading">
+										State
+									</div>
+									<div class="panel-body">
+										<span class="btn btn-success">Current Speed</span> <span class="btn btn-info">Current Gear</span> <span class="btn btn-warning">Current Pedal Cadence</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-2"><i class="fa fa-gear fa-5x"></div>
+							<div class="col-md-5">
+								<div class="panel panel-green">
+									<div class="panel-heading">
+										Method
+									</div>
+									<div class="panel-body">
+										<span class="btn btn-success">Break</span> <span class="btn btn-info">Change Gears</span> <span class="btn btn-warning">Change Cadence</span>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="tab-pane fade" id="class-pills">
 						<h4>Class</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>
+							<strong>A Class</strong> is the blueprint from which individual objects are created.
+							<br/>
+							Bikes of the same make and model. Each bicycle was built from the same set of blueprints and therefore contains the same components.
+						</p>
+						<div class="panel panel-info">
+							<div class="panel-heading">
+								<strong><i>Bicycle</i></strong> class
+							</div>
+							<div class="panel-body">
+								<code>
+									class Bicycle {
+										int cadence = 0;
+										int speed = 0;
+										int gear = 1;
+
+										void changeCadence(int newValue) {
+											 cadence = newValue;
+										}
+
+										void changeGear(int newValue) {
+											 gear = newValue;
+										}
+
+										void speedUp(int increment) {
+											 speed = speed + increment;   
+										}
+
+										void applyBrakes(int decrement) {
+											 speed = speed - decrement;
+										}
+
+										void printStates() {
+											 System.out.println("cadence:" +
+												 cadence + " speed:" + 
+												 speed + " gear:" + gear);
+										}
+									}
+								</code>
+							</div>
+						</div>
 					</div>
 					<div class="tab-pane fade" id="inheritance-pills">
 						<h4>Inheritance</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p>
+							Different kinds of objects often have a certain amount in common with each other. Yet each also defines additional features that make them different.
+							<br/>
+							Object-oriented programming allows classes to <strong><i>inherit</i></strong> commonly used state and behavior from other classes (superclass or parent class).
+						</p>
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="col-md-4">
+								</div>
+								<div class="col-md-4">
+									<div class="panel panel-info">
+										<div class="panel-heading">
+											<strong><i>Bicycle</i></strong>
+										</div>
+										<div class="panel-body">
+											<p>
+												<span class="btn btn-primary">Current Speed</span> <span class="btn btn-primary">Current Gear</span> <span class="btn btn-primary">Current Cadence</span>
+											</p>
+											<p>
+												<span class="btn btn-success">Break</span> <span class="btn btn-success">Change Gears</span> <span class="btn btn-success">Change Cadence</span>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="col-md-4">
+									<div class="panel panel-primary">
+										<div class="panel-heading">
+											<strong><i>Mountain Bike</i></strong>
+										</div>
+										<div class="panel-body">
+											<p>
+												<span class="btn btn-primary">Current Speed</span> <span class="btn btn-primary">Current Gear</span> <span class="btn btn-primary">Current Cadence</span>
+											</p>
+											<p>
+												<span class="btn btn-success">Break</span> <span class="btn btn-success">Change Gears</span> <span class="btn btn-success">Change Cadence</span>
+											</p>
+											<p>
+												<span class="btn btn-warning"> Additional Chain Ring</span>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="panel panel-yellow">
+										<div class="panel-heading">
+											<strong><i>Tandem Bike</i></strong>
+										</div>
+										<div class="panel-body">
+											<p>
+												<span class="btn btn-primary">Current Speed</span> <span class="btn btn-primary">Current Gear</span> <span class="btn btn-primary">Current Cadence</span>
+											</p>
+											<p>
+												<span class="btn btn-success">Break</span> <span class="btn btn-success">Change Gears</span> <span class="btn btn-success">Change Cadence</span>
+											</p>
+											<p>
+												<span class="btn btn-warning">Two Seats</span> <span class="btn btn-warning">Two sets of handlebars</span>
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="panel panel-green">
+										<div class="panel-heading">
+											<strong><i>Road Bike</i></strong>
+										</div>
+										<div class="panel-body">
+											<p>
+												<span class="btn btn-primary">Current Speed</span> <span class="btn btn-primary">Current Gear</span> <span class="btn btn-primary">Current Cadence</span>
+											</p>
+											<p>
+												<span class="btn btn-success">Break</span> <span class="btn btn-success">Change Gears</span> <span class="btn btn-success">Change Cadence</span>
+											</p>
+											<p>
+												<span class="btn btn-warning">Drop Handlebars</span>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
