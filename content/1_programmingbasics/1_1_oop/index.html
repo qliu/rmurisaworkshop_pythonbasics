@@ -57,7 +57,7 @@ layout: default
 							<div class="col-md-4">
 								<div class="panel panel-primary">
 									<div class="panel-heading">
-										<i class="fa fa-paw fa-5x"></i> State
+										<i class="fa fa-paw fa-lg"></i> State
 									</div>
 									<div class="panel-body">
 										<span class="btn btn-success">Name</span> <span class="btn btn-info">Color</span> <span class="btn btn-warning">Hungry</span>
@@ -67,7 +67,7 @@ layout: default
 							<div class="col-md-4">
 								<div class="panel panel-green">
 									<div class="panel-heading">
-										<i class="fa fa-paw fa-5x"></i> Behavior
+										<i class="fa fa-paw fa-lg"></i> Behavior
 									</div>
 									<div class="panel-body">
 										<span class="btn btn-success">Barking</span> <span class="btn btn-info">Fetching</span> <span class="btn btn-warning">Wagging tail</span>
@@ -92,7 +92,7 @@ layout: default
 							<div class="col-md-4">
 								<div class="panel panel-primary">
 									<div class="panel-heading">
-										<i class="fa fa-gear fa-5x"></i> State
+										<i class="fa fa-gear fa-lg"></i> State
 									</div>
 									<div class="panel-body">
 										<span class="btn btn-success">Current Speed</span> <span class="btn btn-info">Current Gear</span> <span class="btn btn-warning">Current Pedal Cadence</span>
@@ -102,7 +102,7 @@ layout: default
 							<div class="col-md-4">
 								<div class="panel panel-green">
 									<div class="panel-heading">
-										<i class="fa fa-gear fa-5x"></i> Method
+										<i class="fa fa-gear fa-lg"></i> Method
 									</div>
 									<div class="panel-body">
 										<span class="btn btn-success">Break</span> <span class="btn btn-info">Change Gears</span> <span class="btn btn-warning">Change Cadence</span>
@@ -128,37 +128,39 @@ layout: default
 								<strong><i>Bicycle</i></strong> class
 							</div>
 							<div class="panel-body">
-								<pre>
-									<code>
-										class Bicycle {
-											int cadence = 0;
-											int speed = 0;
-											int gear = 1;
+								<div class="row">
+									<div class="col-md-6">
+										<pre>
+											class Bicycle {
+												int cadence = 0;
+												int speed = 0;
+												int gear = 1;
 
-											void changeCadence(int newValue) {
-												 cadence = newValue;
-											}
+												void changeCadence(int newValue) {
+													 cadence = newValue;
+												}
 
-											void changeGear(int newValue) {
-												 gear = newValue;
-											}
+												void changeGear(int newValue) {
+													 gear = newValue;
+												}
 
-											void speedUp(int increment) {
-												 speed = speed + increment;   
-											}
+												void speedUp(int increment) {
+													 speed = speed + increment;   
+												}
 
-											void applyBrakes(int decrement) {
-												 speed = speed - decrement;
-											}
+												void applyBrakes(int decrement) {
+													 speed = speed - decrement;
+												}
 
-											void printStates() {
-												 System.out.println("cadence:" +
-													 cadence + " speed:" + 
-													 speed + " gear:" + gear);
+												void printStates() {
+													 System.out.println("cadence:" +
+														 cadence + " speed:" + 
+														 speed + " gear:" + gear);
+												}
 											}
-										}
-									</code>
-								</pre>
+										</pre>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -227,7 +229,7 @@ layout: default
 												<span class="btn btn-success">Break</span> <span class="btn btn-success">Change Gears</span> <span class="btn btn-success">Change Cadence</span>
 											</p>
 											<p>
-												<span class="btn btn-danger">Two Seats</span> <span class="btn btn-warning">Two sets of handlebars</span>
+												<span class="btn btn-danger">Two Seats</span> <span class="btn btn-danger">Two sets of handlebars</span>
 											</p>
 										</div>
 									</div>
