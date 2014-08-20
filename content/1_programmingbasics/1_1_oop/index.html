@@ -128,39 +128,36 @@ layout: default
 								<strong><i>Bicycle</i></strong> class
 							</div>
 							<div class="panel-body">
-								<div class="row">
-									<div class="col-md-6">
-										<pre>
-											class Bicycle {
-												int cadence = 0;
-												int speed = 0;
-												int gear = 1;
+								<pre>
+class Bicycle {
+	int cadence = 0;
+	int speed = 0;
+	int gear = 1;
 
-												void changeCadence(int newValue) {
-													 cadence = newValue;
-												}
+	void changeCadence(int newValue) {
+		 cadence = newValue;
+	}
 
-												void changeGear(int newValue) {
-													 gear = newValue;
-												}
+	void changeGear(int newValue) {
+		 gear = newValue;
+	}
 
-												void speedUp(int increment) {
-													 speed = speed + increment;   
-												}
+	void speedUp(int increment) {
+		 speed = speed + increment;   
+	}
 
-												void applyBrakes(int decrement) {
-													 speed = speed - decrement;
-												}
+	void applyBrakes(int decrement) {
+		 speed = speed - decrement;
+	}
 
-												void printStates() {
-													 System.out.println("cadence:" +
-														 cadence + " speed:" + 
-														 speed + " gear:" + gear);
-												}
-											}
-										</pre>
-									</div>
-								</div>
+	void printStates() {
+		 System.out.println("cadence:" +
+			 cadence + " speed:" + 
+			 speed + " gear:" + gear);
+	}
+}
+									</pre>
+							</div>
 							</div>
 						</div>
 					</div>
