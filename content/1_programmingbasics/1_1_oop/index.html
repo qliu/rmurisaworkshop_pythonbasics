@@ -57,24 +57,24 @@ layout: default
 							<div class="col-md-4">
 								<div class="panel panel-primary">
 									<div class="panel-heading">
-										State
+										<i class="fa fa-paw fa-5x"></i> State
 									</div>
 									<div class="panel-body">
 										<span class="btn btn-success">Name</span> <span class="btn btn-info">Color</span> <span class="btn btn-warning">Hungry</span>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-4"><i class="fa fa-paw fa-5x"></i></div>
 							<div class="col-md-4">
 								<div class="panel panel-green">
 									<div class="panel-heading">
-										Behavior
+										<i class="fa fa-paw fa-5x"></i> Behavior
 									</div>
 									<div class="panel-body">
 										<span class="btn btn-success">Barking</span> <span class="btn btn-info">Fetching</span> <span class="btn btn-warning">Wagging tail</span>
 									</div>
 								</div>
 							</div>
+							<div class="col-md-4"></div>
 						</div>
 						<div class="row">
 							<div class="col-lg-12">
@@ -89,27 +89,27 @@ layout: default
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-5">
+							<div class="col-md-4">
 								<div class="panel panel-primary">
 									<div class="panel-heading">
-										State
+										<i class="fa fa-gear fa-5x"></i> State
 									</div>
 									<div class="panel-body">
 										<span class="btn btn-success">Current Speed</span> <span class="btn btn-info">Current Gear</span> <span class="btn btn-warning">Current Pedal Cadence</span>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-2"><i class="fa fa-gear fa-5x"></i></div>
-							<div class="col-md-5">
+							<div class="col-md-4">
 								<div class="panel panel-green">
 									<div class="panel-heading">
-										Method
+										<i class="fa fa-gear fa-5x"></i> Method
 									</div>
 									<div class="panel-body">
 										<span class="btn btn-success">Break</span> <span class="btn btn-info">Change Gears</span> <span class="btn btn-warning">Change Cadence</span>
 									</div>
 								</div>
 							</div>
+							<div class="col-md-4"></div>
 						</div>
 					</div>
 					<div class="tab-pane fade" id="class-pills">
@@ -128,35 +128,37 @@ layout: default
 								<strong><i>Bicycle</i></strong> class
 							</div>
 							<div class="panel-body">
-								<code>
-									class Bicycle {
-										int cadence = 0;
-										int speed = 0;
-										int gear = 1;
+								<pre>
+									<code>
+										class Bicycle {
+											int cadence = 0;
+											int speed = 0;
+											int gear = 1;
 
-										void changeCadence(int newValue) {
-											 cadence = newValue;
-										}
+											void changeCadence(int newValue) {
+												 cadence = newValue;
+											}
 
-										void changeGear(int newValue) {
-											 gear = newValue;
-										}
+											void changeGear(int newValue) {
+												 gear = newValue;
+											}
 
-										void speedUp(int increment) {
-											 speed = speed + increment;   
-										}
+											void speedUp(int increment) {
+												 speed = speed + increment;   
+											}
 
-										void applyBrakes(int decrement) {
-											 speed = speed - decrement;
-										}
+											void applyBrakes(int decrement) {
+												 speed = speed - decrement;
+											}
 
-										void printStates() {
-											 System.out.println("cadence:" +
-												 cadence + " speed:" + 
-												 speed + " gear:" + gear);
+											void printStates() {
+												 System.out.println("cadence:" +
+													 cadence + " speed:" + 
+													 speed + " gear:" + gear);
+											}
 										}
-									}
-								</code>
+									</code>
+								</pre>
 							</div>
 						</div>
 					</div>
@@ -207,7 +209,7 @@ layout: default
 												<span class="btn btn-success">Break</span> <span class="btn btn-success">Change Gears</span> <span class="btn btn-success">Change Cadence</span>
 											</p>
 											<p>
-												<span class="btn btn-warning"> Additional Chain Ring</span>
+												<span class="btn btn-danger"> Additional Chain Ring</span>
 											</p>
 										</div>
 									</div>
@@ -225,7 +227,7 @@ layout: default
 												<span class="btn btn-success">Break</span> <span class="btn btn-success">Change Gears</span> <span class="btn btn-success">Change Cadence</span>
 											</p>
 											<p>
-												<span class="btn btn-warning">Two Seats</span> <span class="btn btn-warning">Two sets of handlebars</span>
+												<span class="btn btn-danger">Two Seats</span> <span class="btn btn-warning">Two sets of handlebars</span>
 											</p>
 										</div>
 									</div>
@@ -243,7 +245,7 @@ layout: default
 												<span class="btn btn-success">Break</span> <span class="btn btn-success">Change Gears</span> <span class="btn btn-success">Change Cadence</span>
 											</p>
 											<p>
-												<span class="btn btn-warning">Drop Handlebars</span>
+												<span class="btn btn-danger">Drop Handlebars</span>
 											</p>
 										</div>
 									</div>
