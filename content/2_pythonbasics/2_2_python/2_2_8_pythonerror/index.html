@@ -1,0 +1,140 @@
+---
+title: Python Error Handling | Python Basics for ArcGIS - RM-URISA Workshop
+layout: default
+---
+<div class="row page-header">
+	<div class="col-md-9">
+		<h1 class="text-primary">Python Error Handling</h1>
+	</div>
+	<div class="col-md-3">
+		<a href="/rmurisaworkshop_pythonbasics/content/2_pythonbasics/2_2_python/2_2_7_pythonfunction/" class="btn btn-outline btn-warning">Back</a> 
+		<a href="/rmurisaworkshop_pythonbasics/content/3_arcpy/3_1_aboutarcpy/" class="btn btn-success">Next</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+	<p>
+		If Python encouters an error with your script, the first step is to determine what type of errors has occurred. This will help you handle the error.
+	</p>
+	<p>
+		Type types of errors may occur when running your scripts: <strong><i>Syntax Error</i></strong> and <strong><i>Exception</i></strong>.
+	</p>
+    <div class="panel-body">
+      <!-- Nav tabs -->
+      <ul class="nav nav-pills">
+        <li class="active"><a href="#syntax-pills" data-toggle="tab">Syntax Errors</a></li>
+        <li><a href="#except-pills" data-toggle="tab">Exceptions</a></li>
+		<li><a href="#degug-pills" data-toggle="tab">Basic Debugging Tips</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="syntax-pills">
+          <h4>Syntax Errors</h4>
+          <p>
+            Syntax refers to the rules used to create classes, objects, and functions, and instructions of your script. Therefore, a syntax error applies to a structural error in which a rule was broken or not enforced.
+          </p>
+		  <h4>Common syntax errors</h4>
+          <p>
+            <ul>
+				<li>Indentation</li>
+				<li>Forgetting to put a colon <strong>(:)</strong> at the end of statements such as: if, elif, else, for, while, class, def, etc.</li>
+				<li>Wrong comparison operator: using single equal <strong>(=)</strong> instead of double equals <strong>(==)</strong>.</li>
+				<li>Trying to concatenate a non-string value to a string value.</li>
+				<li>Forgetting a quote to begin or end a string value.</li>
+				<li>A typo for a variable or function or method name (case sensitive).</li>
+				<li>Trying to use a Python keyword (reserved identifiers) for a variable name.</li>
+			</ul>
+          </p>
+		  <p>
+			<pre>
+# identation
+print "first row"
+    print "second row"
+	
+# missing colon
+if greetings == True
+    print "Hello!"
+
+# comparison operator
+if greetings = True:
+    print "Hello!"
+
+# concatenate non-string with string
+num_apple = 6
+print "I have " + num_apple + " apples."
+
+# missing begining or ending quote
+print "I have " + str(num_apple) + apples."
+
+# typo or case-sensitive
+num_apple = 6
+print "I have " + str(nun_apple) + apples."
+
+# key word for variable name
+class = "Math"
+			</pre>
+		  <p>
+        </div>
+        
+        <div class="tab-pane fade" id="except-pills">
+          <h4>Exceptions</h4>
+          <p>
+            After you have corrected all the syntax errors, your script can still fail and generate an error. 
+			These errors are referred to as <strong><i>exceptions</i></strong> and are usually caused by errors during the execution of your script.
+		  </p>
+		  <p>
+			Exceptions are typically raised because of an error in the logic or decision-making steps of your script. 
+			An exception can also occur if your script tries to work with data that it is not expecting. 
+          </p>
+		  <pre>
+>>> l = [1,2,3]
+>>> l[3]
+
+Traceback (most recent call last):
+  File "<pyshell#7>", line 1, in <module>
+    l[3]
+IndexError: list index out of range
+
+>>> a="2"
+>>> pow(a,3)
+
+Traceback (most recent call last):
+  File "<pyshell#9>", line 1, in <module>
+    pow(a,3)
+TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'int'
+		  </pre>
+        </div>
+		
+		<div class="tab-pane fade" id="debug-pills">
+          <h4>Basic Debugging</h4>
+          <p>
+            After you determine the type of error your script encountered, the next step is to debug.
+          </p>
+		  <img src="/rmurisaworkshop_pythonbasics/images/2_2_8_debugflowchart.png">
+		  
+		  <div class="panel panel-yellow">
+            <div class="panel-heading">
+              <i class="fa fa-trophy fa-lg"></i> Challenge 4 - Solving scripting errors
+            </div>
+            <div class="panel-body">
+			  <i class="fa fa-cloud-download fa-lg"></i> <a target="_blank" href="/rmurisaworkshop_pythonbasics/downloads/schools.zip">Download the Data</a>
+              <ol>
+                <li>Donwload the data.</li>
+                <li>Un-zip the data and copy to your working directory.</li>
+                <li>Open "HandleErrors.py" with IDLE.</li>
+                <li>Run the script.</li>
+                <li>Correct errors.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+	</div>
+</div>
+
+<!-- Add hidden div to identify current active navigation item -->
+<div id="page-label" style="display:none;">2_2_8_pythonerror</div>
+<div id="parent-page-label" style="display:none;">li_2_pythonbasics</div>
+<div id="parent-secondlevel-page-label" style="display:none;">li_2_2_python</div>
