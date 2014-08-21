@@ -4,3 +4,4 @@
 
 school_1 = "Elementary"
 school_2 = "Senior"
+school_3 = ""

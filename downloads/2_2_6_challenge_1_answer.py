@@ -4,6 +4,7 @@
 
 school_1 = "Elementary"
 school_2 = "Senior"
+school_3 = ""
 
 if school_1 == "Elementary":
     print school_1
@@ -18,5 +19,13 @@ if school_2 == "Elementary":
 elif school_2 == "Senior":
     school_2 = "High"
     print school_2
+else:
+    print "Unknown"
+    
+if school_3 == "Elementary":
+    print school_3
+elif school_3 == "Senior":
+    school_3 = "High"
+    print school_3
 else:
     print "Unknown"

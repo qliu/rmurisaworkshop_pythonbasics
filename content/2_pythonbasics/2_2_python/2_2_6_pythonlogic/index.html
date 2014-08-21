@@ -92,6 +92,7 @@ else:
                 <li>If the value equals to "Elementary", print the value.</li>
                 <li>If the value equals to "Senior", replace the value with string "High", and print the value.</li>
                 <li>If the value does not equal to any of them, print "Unknown".</li>
+                <li>Hint: use <code>if ... elif ... else ...</code> statement.</li>
               </ul>
               <div class="panel panel-default">
                   <div class="panel-heading">
@@ -101,10 +102,11 @@ else:
                   </div>
                   <div id="collapse-hint-1" class="panel-collapse collapse">
                       <div class="panel-body">
-                          <pre>
-                            <code>
+                        <pre>
+                          <code>
 school_1 = "Elementary"
 school_2 = "Senior"
+school_3 = ""
 
 if school_1 == "Elementary":
     print school_1
@@ -121,8 +123,18 @@ elif school_2 == "Senior":
     print school_2
 else:
     print "Unknown"
-                            </code>
-                          </pre>
+    
+if school_3 == "Elementary":
+    print school_3
+elif school_3 == "Senior":
+    school_3 = "High"
+    print school_3
+else:
+    print "Unknown"
+                          </code>
+                        </pre>
+                        <br/>
+                        <i class="fa fa-cloud-download fa-lg"></i> <a target="_blank" href="/rmurisaworkshop_pythonbasics/downloads/2_2_6_challenge_1_answer.py">Download the answer</a>
                       </div>
                   </div>
               </div>
@@ -133,6 +145,101 @@ else:
         </div>
         
         <div class="tab-pane fade in active" id="for-pills">
+          <h4>Loops</h4>
+          <p>
+            There may be a situation when you need to execute a block of code several number of times. 
+            A loop statement allows us to execute a statement or group of statements multiple times. 
+          </p>
+          <img src="/rmurisaworkshop_pythonbasics/images/2_2_6_for.jpg">
+          <h4>Loop Statements</h4>
+          <p>
+            <code>while loop</code> : Repeats a statement or group of statements while a given condition is true. 
+            It tests the condition before executing the loop body. <br/>
+            <code>for loop</code> : Executes a sequence of statements multiple times and abbreviates the code that manages the loop variable. <br/>
+            <code>nested loops</code> : You can use one or more loop inside any another while, for or do..while loop.
+          </p>
+          <pre>
+# while loop
+
+nbhoods = ["baker","BAKER","Athmar Park"]
+n = len(nbhoods) # get list length
+counter = 0
+while counter < n:
+    if nbhoods[counter] == "BAKER":
+        new_nbhood = nbhoods[counter].lower() # convert string characters to lower case
+        print new_nbhood
+    elif nbhoods[counter] == "baker":
+        new_nbhood = nbhoods[counter].upper() # convert string characters to upper case
+        print new_nbhood
+    else:
+        print "Not Baker Neighborhood"
+        counter += 1 # equivalent to: counter = counter + 1
+        continue
+    counter += 1 # equivalent to: counter = counter + 1
+          </pre>
+          
+          <pre>
+# while loop
+
+nbhoods = ["baker","BAKER","Athmar Park"]
+for nbhood in nbhoods:
+    if nbhood == "BAKER":
+        new_nbhood = nbhood.lower() # convert string characters to lower case
+        print new_nbhood
+    elif nbhood == "baker":
+        new_nbhood = nbhood.upper() # convert string characters to upper case
+        print new_nbhood
+    else:
+        print "Not Baker Neighborhood"
+        continue
+          </pre>
+          
+          <div class="panel panel-yellow">
+            <div class="panel-heading">
+              <i class="fa fa-trophy fa-lg"></i> Challenge 2
+            </div>
+            <div class="panel-body">
+              <ul>
+                <li>Modify the script from Challenge 1.</li>
+                <li>Put the three schools into a list.</li>
+                <li>Loop through the school list, execute the same conditional scripts from Challenge 1.</li>
+                <li>Print the final results of the modifed school list.</li>
+                <li>Hint: use <code>for ... in ...</code> statement.</li>
+              </ul>
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <i class="fa fa-lightbulb-o fa-lg"></i> <a data-toggle="collapse" href="#collapse-hint-1" class="collapsed" style="color:white;"> Hint</a>
+                      </h4>
+                  </div>
+                  <div id="collapse-hint-1" class="panel-collapse collapse">
+                      <div class="panel-body">
+                        <pre>
+                          <code>
+# put three schools into a list
+schools = ["Elementary","Senior",""]
+
+# look through school list
+for school in schools:
+    if school == "Elementary":
+        print school
+    elif school == "Senior":
+        school = "High"
+        print school
+    else:
+        print "Unknown"
+
+# print modified school list
+print schools
+                          </code>
+                        </pre>
+                        <br/>
+                        <i class="fa fa-cloud-download fa-lg"></i> <a target="_blank" href="/rmurisaworkshop_pythonbasics/downloads/2_2_6_challenge_2_answer.py">Download the answer</a>
+                      </div>
+                  </div>
+              </div> 
+            </div>
+          </div>
         </div>
       </div>
     </div>
