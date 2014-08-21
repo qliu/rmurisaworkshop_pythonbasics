@@ -1,10 +1,10 @@
 ---
-title: Python Flow Control | Python Basics for ArcGIS - RM-URISA Workshop
+title: Python Control Flow | Python Basics for ArcGIS - RM-URISA Workshop
 layout: default
 ---
 <div class="row page-header">
 	<div class="col-md-9">
-		<h1 class="text-primary">Python Flow Control</h1>
+		<h1 class="text-primary">Python Control Flow</h1>
 	</div>
 	<div class="col-md-3">
 		<a href="/rmurisaworkshop_pythonbasics/content/2_pythonbasics/2_2_python/2_2_5_pythonstatement/" class="btn btn-outline btn-warning">Back</a> 
@@ -14,37 +14,128 @@ layout: default
 
 <div class="row">
 	<div class="col-lg-12">
-    <p>
-      When you need to perform an action in a script that does not return a value, you will use statements in your script instructions.
-    </p>
-    <p>
-      Some statements, like the print statement, are used like a command.<br/>
-      Other statements can extend script functionality by automating tasks 
-      and incorporating conditional statements into the script.
-    </p>
-    <h4>Example</h4>
-    <p>
-      print : Writes the string representation of a data type or returned function value. <br/>
-      import : Loads a module to memory. <br/>
-      for-in : Automates tasks in a script. <br/>
-      if-else : Adds conditions to a script. <br/>
-      try-except : Handles script errors. 
-    </p>
-    <pre>
-      <code>
->>> import datetime
->>> datetime.date.today()
-datetime.date(2014, 8, 21)
-      </code>
-    </pre>
-    <pre>
-      <code>
->>> from datetime import date
->>> today = date.today()
->>> print today
-2014-08-21
-      </code>
-    </pre>
+    <div class="panel-body">
+      <!-- Nav tabs -->
+      <ul class="nav nav-pills">
+        <li class="active"><a href="#if-pills" data-toggle="tab">Decision Making</a></li>
+        <li><a href="#for-pills" data-toggle="tab">Loops</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="if-pills">
+          <h4>Conditons</h4>
+          <p>
+            Decision making structures require one or more conditions to be evaluated or tested by the program, 
+            along with a statement or statements to be executed if the condition is determined to be true, 
+            and optionally, other statements to be executed if the condition is determined to be false.
+          </p>
+          <img src="/rmurisaworkshop_pythonbasics/images/2_2_6_if.jpg">
+          <h4>Conditional Statements</h4>
+          <p>
+            <code>if</code> : consists of a boolean expression followed by one or more statements. <br/>
+            <code>if ... else ...</code> : if statement can be followed by an optional else statement, 
+            which executes when the boolean expression is false. <br/>
+            <code>nested if statements</code> : you can use one if or else if statement inside another if or else if statements.
+          </p>
+          <pre>
+            <code>
+nbhood = "BAKER"
+if nbhood == "BAKER":
+    new_nbhood = nbhood.capitalize()
+    print new_nbhood
+else:
+    print "Not Baker Neighborhood"
+            </code>
+          </pre>
+          <br/>
+          <pre>
+            <code>
+# nested if statements
+
+nbhood = "baker"
+if nbhood == "BAKER":
+    new_nbhood = nbhood.lower() # convert string characters to lower case
+else:
+    if nbhood == "baker":
+        new_nbhood = nbhood.upper() # convert string characters to upper case
+    else:
+        print "Not Baker Neighborhood"
+print new_nbhood
+            </code>
+          </pre>
+          <br/>
+          <pre>
+            <code>
+# if ... elif ... statements
+
+nbhood = "baker"
+if nbhood == "BAKER":
+    new_nbhood = nbhood.lower() # convert string characters to lower case
+    print new_nbhood
+elif nbhood == "baker":
+    new_nbhood = nbhood.upper() # convert string characters to upper case
+    print new_nbhood
+else:
+    print "Not Baker Neighborhood"
+            </code>
+          </pre>
+          
+          <div class="panel panel-yellow">
+            <div class="panel-heading">
+              <i class="fa fa-trophy fa-lg"></i> Challenge 1
+            </div>
+            <div class="panel-body">
+              <i class="fa fa-cloud-download fa-lg"></i> <a href="" download="/rmurisaworkshop_pythonbasics/downloads/2_2_6_challenge_1.py">Download the data</a>
+              <ul>
+                <li>Check the value of school_1 and school_2.</li>
+                <li>If the value equals to "Elementary", print the value.</li>
+                <li>If the value equals to "Senior", replace the value with string "High", and print the value.</li>
+                <li>If the value does not equal to any of them, print "Unknown".</li>
+              </ul>
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse-hint-1" class="collapsed"><i class="fa fa-lightbulb-o fa-lg"></i>Hint</a>
+                      </h4>
+                  </div>
+                  <div id="collapse-hint-1" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                          <pre>
+                            <code>
+school_1 = "Elementary"
+school_2 = "Senior"
+
+if school_1 == "Elementary":
+    print school_1
+elif school_1 == "Senior":
+    school_1 = "High"
+    print school_1
+else:
+    print "Unknown"
+
+if school_2 == "Elementary":
+    print school_2
+elif school_2 == "Senior":
+    school_2 = "High"
+    print school_2
+else:
+    print "Unknown"
+                            </code>
+                          </pre>
+                      </div>
+                  </div>
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-pane fade in active" id="for-pills">
+        </div>
+      </div>
+    </div>
 	</div>
 </div>
 
