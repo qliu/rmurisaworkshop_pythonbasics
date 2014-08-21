@@ -13,65 +13,304 @@ layout: default
 </div>
 
 <div class="row">
-	<div class="col-lg-12">
-    <h3 class="text-info">Choosing Scripting Environments</h3>
-    <p>
-      There is not a specific environment you must use when creating and running a Python script. 
-      You can choose the scripting environment that you prefer. 
-      However, depending on the task in your script, one environment may be a better choice than the other. 
-    </p>
-    <h3 class="text-info">ArcMap Python Window or IDLE (Python GUI)?</h3>
-    <p>
-      <span class="text-muted"><i>Short version:</i></span> Within <strong>Python Window</strong>, you can quickly test and learn the scripting capabilities and command syntax.<br/>
-      If you want to save those lines of code into a more permanent script on your disk, pass the code to IDLE (Python GUI).
-    </p>
-	</div>
   <div class="col-lg-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-          Questions that may help you determine which environment will work best for your script's task
-      </div>
-      <div class="panel-body">
-          <div class="table-responsive">
-              <table class="table table-striped table-bordered table-hover">
-                  <thead>
-                      <tr class="info">
-                          <th>Do you need to...</th>
-                          <th>Python Window</th>
-                          <th>IDLE (Python GUI)</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>Execute a single line of code?</td>
-                          <td>X</td>
-                          <td>X</td>
-                      </tr>
-                      <tr>
-                          <td>Work directly with layers in ArcMap?</td>
-                          <td>X</td>
-                          <td></td>
-                      </tr>
-                      <tr>
-                          <td>Test geoprocessing workflows, easily verify results?</td>
-                          <td>X</td>
-                          <td></td>
-                      </tr>
-                      <tr>
-                          <td>Work with tools to enter, edit, and check syntax in your code?</td>
-                          <td></td>
-                          <td>X</td>
-                      </tr>
-                      <tr>
-                          <td>Work in an integrated debugging environment?</td>
-                          <td></td>
-                          <td>X</td>
-                      </tr>
-                  </tbody>
-              </table>
+    <div class="panel-body">
+      <!-- Nav tabs -->
+      <ul class="nav nav-pills">
+        <li class="active"><a href="#variable-pills" data-toggle="tab">Variable & Value</a></li>
+        <li><a href="#numbers-pills" data-toggle="tab">Numbers</a></li>
+        <li><a href="#boolean-pills" data-toggle="tab">Boolean</a></li>
+        <li><a href="#strings-pills" data-toggle="tab">Strings</a></li>
+        <li><a href="#list-pills" data-toggle="tab">List</a></li>
+        <li><a href="#tuple-pills" data-toggle="tab">Tuple</a></li>
+        <li><a href="#dict-pills" data-toggle="tab">Dictionary</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="variable-pills">
+          <h4>Variable and Value</h4>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Variables and Values in ArcGIS
+            </div>
+            <div class="panel-body">
+              <img src="/images/2_2_4_variablevalue.png">
+            </div>
           </div>
+          <p>
+            <strong>Variable</strong> is a storage location and an associated symbolic name that contains some known or unknown quantity or information (a value).
+          </p>
+          <p>
+            <strong>Value</strong> is an expression of actual quantity or information you are working with.
+          </p>
+          <pre>
+            <code>
+variable = "value"
+            </code>
+          </pre>
+          <h4>Python Identifiers</h4>
+          <p>
+            A Python identifier is a name used to identify a variable, function, class, module or other object.
+          </p>
+          <p>
+            An identifier starts with <strong>a letter</strong> A to Z or a to z or <strong>an underscore (_)</strong> followed by zero or more letters, underscores and digits (0 to 9).
+          </p>
+          <div class="alert alert-danger">
+            Python does not allow punctuation characters such as @, $ and % within identifiers. <br/>
+          </div>
+          <div class="alert alert-danger">
+            Python is a case sensitive programming language. Thus, Population and population are two different identifiers in Python.
+          </div>
+          <pre>
+            <code>
+>>> a = 1
+>>> a = 2
+>>> print a
+2
+            </code>
+          </pre>
+          <pre>
+            <code>
+>>> a = 1
+>>> A = 2
+>>> print a
+1
+>>> print A
+2
+            </code>
+          </pre>         
+          <h4>Reserved Words</h4>
+          <p>
+            Reserved words may not be used as constant or variable or any other identifier names. All the Python keywords contain lowercase letters only.
+            Example: and, not, or, for, if, try, import, ...
+          </p>
+        </div>
+        
+        <div class="tab-pane fade in active" id="numbers-pills">
+          <h4>Numbers (Numeric Types)</h4>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Numbers in ArcGIS
+            </div>
+            <div class="panel-body">
+              <img src="/images/2_2_4_numbers.png">
+            </div>
+          </div>
+          <p>
+            There are four distinct numeric types: plain integers (int), long integers (long), floating point numbers (float), and complex numbers (complex).
+          </p>
+          <ul>
+            <li>int (signed integers): often called just integers or ints, are positive or negative whole numbers with no decimal point.</li>
+            <li>long (long integers ): or longs, are integers of unlimited size, written like integers and followed by an uppercase or lowercase L.</li>
+            <li>float (floating point real values) : or floats, represent real numbers and are written with a decimal point dividing the integer and fractional parts. Floats may also be in scientific notation, with E or e indicating the power of 10 (2.5e2 = 2.5 x 102 = 250).</li>
+            <li>complex (complex numbers) : are of the form a + bJ, where a and b are floats and J (or j) represents the square root of -1 (which is an imaginary number). a is the real part of the number, and b is the imaginary part. Complex numbers are not used much in Python programming.</li>
+          </ul>
+          <h4>Basic Operations</h4>
+          <p>
+            +, -, *, /, %(mod), **(power), int(x) (convert x to integer), long(x), float(x), complex(x)
+          </p>
+        </div>
+        
+        <div class="tab-pane fade" id="boolean-pills">
+          <h4>Boolean</h4>
+          <p>
+            Boolean values are the two constant objects <strong><i>False</i></strong> and <strong><i>True</i></strong>. 
+            In numeric contexts, they behave like the integers 0 and 1, respectively. 
+          </p>
+          <p>
+            The built-in function bool() can be used to convert any value to a Boolean.
+          </p>
+        </div>
+        
+        <div class="tab-pane fade" id="strings-pills">
+          <h4>Strings</h4>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Strings in ArcGIS
+            </div>
+            <div class="panel-body">
+              <img src="/images/2_2_4_strings.png">
+            </div>
+          </div>
+          <p>
+            Strings are a collection of one or more characters. 
+            String literals are written in single or double quotes. 
+            Python treats single quotes the same as double quotes.
+          </p>
+          <h4>Concatenation</h4>
+          <pre>
+            <code>
+>>> first_name = "Sherlock"
+>>> last_name = "Holmes"
+>>> full_name = first_name + " " + last_name
+>>> print full_name
+Sherlock Holmes
+            </code>
+          </pre>
+          <p class="text-danger">You cannot concatenate string and number values in Python.</p>
+          <div class="alert alert-danger">
+            <pre>
+              <code>
+>>> park_name = "wash_park"
+>>> park_zip = 80209
+>>> shape_ext = ".shp"
+>>> park_file = park_name + park_zip + shape_ext
+
+Traceback (most recent call last):
+  File "<pyshell#9>", line 1, in <module>
+    park_file = park_name + park_zip + shape_ext
+TypeError: cannot concatenate 'str' and 'int' objects
+              </code>
+            </pre>
+          </div>
+          <div class="alert alert-success">
+            In order to successfully concatenate these variables, you need to convert the park_zip value to a string.
+            <strong><i>str()</i></strong> function tells Python to use the string equivalence of the value inside the parentheses.
+            <pre>
+              <code>
+>>> park_file = park_name + str(park_zip) + shape_ext
+>>> print park_file
+wash_park80209.shp
+              </code>
+            </pre>
+          </div>
+          <h4>String Formatting</h4>
+          <p>
+            The string format operator <strong>%</strong> produces formatted strings.
+          </p>
+          <pre>
+            <code>
+>>> print "%s has sent you a shapefile: %s" % (full_name,park_file)
+Sherlock Holmes has sent you a shapefile: wash_park80209.shp
+            </code>
+          </pre>
+          <p>
+            <strong>Basic Format Symbol</strong>:<br/>
+            %c - character<br/>
+            %s - string<br/>
+            %d - signed decimal integer<br/>
+            %f - floating point real number
+          </p>
+          <h4>Accessing Values in Strings</h4>
+          <p>
+            Each of the characters in a string has an index that can be used to return the character. <br/>
+            The index starts with <strong>0</strong> and increases from left to right.
+          </p>
+          <pre>
+            <code>
+>>> s = "Hello World!"
+>>> print s[0]
+H
+>>> print s[1:5]
+ello
+>>> print s[:6]
+Hello 
+>>> print s[-1]
+!
+>>> print s[6:]
+World!
+            </code>
+          </pre>
+        </div>
+        
+        <div class="tab-pane fade" id="list-pills">
+          <h4>List</h4>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              List in ArcGIS
+            </div>
+            <div class="panel-body">
+              <img src="/images/2_2_4_list.png">
+            </div>
+          </div>
+          <p>
+            <strong>A list</strong> stores a sequence of items inside brakets and seperates the items using commas.
+          </p>
+          <p>
+            A list, like a string, is a collection of one or more items. 
+            Each item has an index that starts with 0 and increases from left to right.<br/>
+            Lists help you automate a task through a series of items. 
+            You can execute the task on each item, 
+            or you can call specific items using the item's index.
+          </p>
+          <pre>
+            <code>
+>>> l = [1,2,3]
+>>> l[0] = 4
+>>> l
+[4, 2, 3]
+>>> l.append(5)
+>>> l
+[4, 2, 3, 5]
+            </code>
+          </pre>
+        </div>
+        
+        <div class="tab-pane fade" id="tuple-pills">
+          <h4>Tuple</h4>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Tuple in ArcGIS
+            </div>
+            <div class="panel-body">
+              <img src="/images/2_2_4_tuple.png">
+          </div>
+          </div>
+          <p>
+            <strong>A tuple</strong> stores a sequence of items.<br/>
+            <span class="text-danger">Tuples are immutable, meaning you can't change it.</span><br/>
+            Tuples are useful to ensure the integrity of the sequence.<br/>
+            Similar to a list, a tuple is indexed and these indexs can be used to reference an item in a tuple.
+          </p>
+          <pre>
+            <code>
+>>> t = (1,2,3)
+>>> t[0] = 4
+
+Traceback (most recent call last):
+  File "<pyshell#29>", line 1, in <module>
+    t[0] = 4
+TypeError: 'tuple' object does not support item assignment
+            </code>
+          </pre>
+        </div>
+        
+        <div class="tab-pane fade" id="dict-pills">
+          <h4>Dictionary</h4>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Dictionary in ArcGIS
+            </div>
+            <div class="panel-body">
+              <img src="/images/2_2_4_dict.png">
+            </div>
+            <p>
+              <strong>Dictionary</strong> is a very useful data type built into Python. 
+              Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by keys, 
+              which can be any immutable type: strings, numbers, tuples (contain only strings, numbers, or tuples).
+              <span class="text-danger">You can’t use lists as keys, since lists can be modified in place.</span>
+            </p>
+            <p>
+              It is best to think of a dictionary as an unordered set of key: value pairs, 
+              with the requirement that the keys are unique (within one dictionary).
+              Placing a comma-separated list of key:value pairs within the braces adds initial key:value pairs to the dictionary.
+            </p>
+            <pre>
+              <code>
+>>> neighborhood = {"FID": 0,"Shape": "Polygon","Name": "Athmar Park","TotalBirth": 183}
+>>> neighborhood["Shape"]
+'Polygon'
+>>> neighborhood["Name"]
+'Athmar Park'
+>>> neighborhood["TotalBirth"]
+183
+              </code>
+            </pre>
+          </div>
+        </div>
       </div>
-  </div>
+    </div>
   </div>
 </div>
 
