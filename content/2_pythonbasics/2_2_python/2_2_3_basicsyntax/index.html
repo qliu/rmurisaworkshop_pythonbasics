@@ -1,0 +1,137 @@
+---
+title: Python Basic Syntax | Python Basics for ArcGIS - RM-URISA Workshop
+layout: default
+---
+<div class="row page-header">
+	<div class="col-md-9">
+		<h1 class="text-primary">Python Basic Syntax</h1>
+	</div>
+	<div class="col-md-3">
+		<a href="/rmurisaworkshop_pythonbasics/content/2_pythonbasics/2_2_python/2_2_2_pytonenv/" class="btn btn-outline btn-warning">Back</a> 
+		<a href="/rmurisaworkshop_pythonbasics/content/2_pythonbasics/2_2_python/2_2_4_pytondatatype/" class="btn btn-success">Next</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+    <h3 class="text-info">First Python Program</h3>
+    <h4>Interactive mode programming</h4>
+    <pre>
+      <code>
+Python 2.7.8 (default, Jun 30 2014, 16:03:49) [MSC v.1500 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>>  print "Hello, Python!"
+      </code>
+     </pre>
+    <h4>Script mode programming</h4>
+    <pre>
+      <code>
+print "Hello, Python!"
+      </code>
+     </pre>
+	</div>
+  
+  <div class="col-lg-12">
+    <h3 class="text-info">Lines and Indentation</h3>
+    <p>
+      There are no braces in Python to indicate blocks of code for class and function definitions or flow control. 
+      The only delimiter is a <strong><i>colon (:)</i></strong> and the <strong><i>indentation</i></strong> of the indentation, which is rigidly enforced. 
+      Blocks of code are denoted by line indentations.
+    </p>
+    <div class="alert alert-info">
+      <i class="fa fa-link fa-lg"></i> Style Guilde for Python Code: <a target="_blank" href="http://legacy.python.org/dev/peps/pep-0008/">http://legacy.python.org/dev/peps/pep-0008/</a>
+    </div>
+    <pre>
+      <code>
+if True:
+    print "True"
+else:
+    print "False"
+      </code>
+     </pre>
+	</div>
+  
+  <div class="col-lg-12">
+    <h3 class="text-info">Multiple Statements on a single line</h3>
+    <p>
+      The semicolon <strong>( ; )</strong> allows multiple statements on the single line given that neither statement starts a new code block.
+    </p>
+    <pre>
+      <code>
+a = 1; b = 2; print a+b
+      </code>
+     </pre>
+	</div>
+  
+   <div class="col-lg-12">
+    <h3 class="text-info">Multi-line statement</h3>
+    <p>
+      Statements in Python typically end with a new line. 
+      Python does, however, allow the use of the line continuation character <strong>(\)</strong> to denote that the line should continue.
+    </p>
+    <pre>
+      <code>
+full_name = prefix + \
+     first_name + \
+     middle_name + \
+     last_name
+      </code>
+     </pre>
+    <p>
+      Statements contained within the [], {} or () brackets <strong>do not</strong> need to use the line continuation character. 
+    </p>
+    <pre>
+      <code>
+days = ['Monday', 'Tuesday', 'Wednesday',
+        'Thursday', 'Friday']
+      </code>
+     </pre>   
+    <pre>
+      <code>
+student = {"name":student_name,
+           "id":student_id,
+           "course":course_id,
+           "score":score
+          }
+      </code>
+     </pre>      
+  </div>
+
+  <div class="col-lg-12">
+    <h3 class="text-info">Quotation</h3>
+    <p>
+      Python accepts single ('), double (") and triple (''' or """) quotes to denote string literals, 
+      as long as the same type of quote starts and ends the string. 
+      The triple quotes can be used to span the string across multiple lines.
+    </p>
+    <pre>
+      <code>
+word = 'word'
+sentence = "This is a sentence."
+paragraph = """This is a paragraph. It is
+made up of multiple lines and sentences."""
+      </code>
+     </pre>
+	</div>
+
+  <div class="col-lg-12">
+    <h3 class="text-info">Comments</h3>
+    <p>
+      A hash sign <strong>(#)</strong> that is not inside a string literal begins a comment. 
+      All characters after the # and up to the physical line end are part of the comment and the Python interpreter ignores them.
+    </p>
+    <pre>
+      <code>
+# This is my first Python program.
+
+# print something
+print "Hello, Python!"  # print sentence
+      </code>
+     </pre>
+	</div>
+</div>
+
+<!-- Add hidden div to identify current active navigation item -->
+<div id="page-label" style="display:none;">2_2_3_basicsyntax</div>
+<div id="parent-page-label" style="display:none;">li_2_pythonbasics</div>
+<div id="parent-secondlevel-page-label" style="display:none;">li_2_2_python</div>
