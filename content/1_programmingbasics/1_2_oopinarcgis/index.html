@@ -14,39 +14,83 @@ layout: default
 
 <div class="row">
 	<div class="col-lg-12">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<!-- Nav tabs -->
-				<ul class="nav nav-pills">
-					<li class="active"><a href="#omd-pills" data-toggle="tab">ArcObjects OMD</a></li>
-					<li><a href="#class-pills" data-toggle="tab">Class</a></li>
-					<li><a href="#object-pills" data-toggle="tab">Object</a></li>
-					<li><a href="#func-pills" data-toggle="tab">Function,Property,Method</a></li>
-				</ul>
+    <div class="panel-body">
+      <!-- Nav tabs -->
+      <ul class="nav nav-pills">
+        <li class="active"><a href="#omd-pills" data-toggle="tab">ArcObjects OMD</a></li>
+        <li><a href="#class-pills" data-toggle="tab">Class & Object</a></li>
+      </ul>
 
-				<!-- Tab panes -->
-				<div class="tab-content">
-					<div class="tab-pane fade in active" id="omd-pills">
-						<h4>ArcObjects Object Model Diagram (OMD)</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-					<div class="tab-pane fade" id="class-pills">
-						<h4>Geometry Class</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-					<div class="tab-pane fade" id="object-pills">
-						<h4>Object</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-					<div class="tab-pane fade" id="func-pills">
-						<h4>Function, Property, Method</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-				</div>
-			</div>
-		</div> 
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="omd-pills">
+          <h4>ArcObjects Object Model Diagram (OMD)</h4>
+          <p>
+            ArcGIS products are built upon thousands of components called <strong>ArcObjects</strong>. 
+            When you use an application, such as ArcMap, usually you are looking at or working with ArcObjects. 
+            Every command or tool you use for adding data, editing, or performing spatial analysis is running code that includes ArcObjects.
+          </p>
+          <p>
+            ArcObjects are grouped into over 65 assemblies based on the relationships between the objects. 
+            Each assembly consists of ArcObjects that can be diagrammed based on their class relationships. 
+            These diagrams are referred to as <strong>Object Model Diagrams (OMDs)</strong>. 
+            OMDs provide information, such as how to work with certain classes and how classes relate to each other. 
+          </p>
+          <p>
+            Carto Object Model: <i class="fa fa-link fa-lg"> http://resources.arcgis.com/en/help/arcobjects-net/pdf/CartoObjectModel.pdf
+          </p>
+          <p>
+            Geometry Object Model: <i class="fa fa-link fa-lg"> http://resources.arcgis.com/en/help/arcobjects-net/pdf/GeometryObjectModel.pdf
+          </p>
+          <p>
+            <div class="alert alert-info">
+                You can access OMDs from their install location at <code><ArcObjects developer kit install location>\Diagrams</code>.
+            </div>
+          </p>    
+        </div>
+        <div class="tab-pane fade" id="class-pills">
+          <h4>Class & Object in ArcGIS</h4>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <strong><i>Geometry</i></strong> class
+                </div>
+                <div class="panel-body">
+                  <p>
+                    <span class="btn btn-primary">Dimension</span> <span class="btn btn-primary">Centroid</span> <span class="btn btn-primary">Spatial Reference</span>
+                  </p>
+                  <p>
+                    <span class="btn btn-success">Get Dimension</span> <span class="btn btn-success">Get Centroid</span> <span class="btn btn-success">Get/Set Spatial Reference</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <strong><i>Polygon</i></strong> object
+                  </div>
+                  <div class="panel-body">
+                    <p>
+                      <span class="btn btn-primary disabled">Dimension</span> <span class="btn btn-primary disabled">Centroid</span> <span class="btn btn-primary disabled">Spatial Reference</span>
+                    </p>
+                    <p>
+                      <span class="btn btn-success disabled">Get Dimension</span> <span class="btn btn-success disabled">Get Centroid</span> <span class="btn btn-success disabled">Get/Set Spatial Reference</span>
+                    </p>
+                    <p>
+                      <span class="btn btn-danger">Area</span> <span class="btn btn-warning">Simplify</span> <span class="btn btn-warning">County Interior Rings</span>
+                    </p>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 	</div>
 </div>
 
 <!-- Add hidden div to identify current active navigation item -->
 <div id="page-label" style="display:none;">1_2_oopinarcgis</div>
+<div id="parent-page-label" style="display:none;">li_1_programmingbasics</div>
