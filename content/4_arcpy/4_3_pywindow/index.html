@@ -1,0 +1,108 @@
+---
+title: Geoprocessing in Python Window | Python Basics for ArcGIS - RM-URISA Workshop
+layout: default
+---
+<div class="row page-header">
+	<div class="col-md-9">
+		<h1 class="text-primary">Geoprocessing in Python Window</h1>
+	</div>
+	<div class="col-md-3">
+		<a href="/rmurisaworkshop_pythonbasics/content/4_arcpy/4_2_snippet/" class="btn btn-outline btn-warning">Back</a> 
+		<a href="/rmurisaworkshop_pythonbasics/content/4_arcpy/4_4_idle/" class="btn btn-success">Next</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+    <h4>Make edits to pasted Python Snippet and re-run the clip processing</h4>
+    <p>
+      Use the Python code in Python Window to clip <strong>denver_schools</strong> with <strong>montbell</strong> boundary.
+    </p>
+		<p>
+		  <ul>
+        <li>In the Python window, replace "five_points" with "montbell".</li>
+        <li>Change the feature class name of the Output Feature Class parameter to <strong>montbell_schools</strong>.</li>
+        <li>Press Enter twice.</li>
+      </ul>
+		</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+    <h4>Buffer schools using Python Window</h4>
+		<p>
+		  <ul>
+        <li>In Python Window, type:<br/>
+          <pre>
+arcpy.en
+          </pre>
+        </li>
+          <p>
+            The syntax for the Python statement appears in a drop-down list. 
+            This list of choices is called <strong>code completion</strong>.
+            Code completion allows you to complete your code faster by choosing options from a drop-down list, 
+            rather than typing. In addition to allowing you to work faster, this also reduces errors in your code.
+          </p>
+        <li>Press the Tab key on your keyboard to accept the <strong>env</strong> value in the list.</li>
+        <p>The <strong>env</strong> class stores the ArcGIS environment settings used for geoprocessing.</p>
+        <p>Next, you will set the value of the <strong>workspace</strong>, which is an environment setting.</p>
+        <li>After arcpy.env, type:<br/>
+          <pre>
+.w
+          </pre>
+        </li>
+        <li>Press the Tab key to add <strong>workspace</strong> to your line of Python code.</li>
+        <li>Verify that your code now looks like this:<br/>
+          <pre>
+arcpy.env.workspace
+          </pre>
+        </li>
+        <li>To assign the path to your data, type:<br/>
+          <pre>
+= "your_folder_path/schools.gdb"
+          </pre>
+        </li>
+        <li>When you have finished setting your workspace, press Enter to move to a new prompt.</li>
+        <p>
+          In this line of code, you have accessed the workspace geoprocessing environment setting and set its value to the <strong>schools</strong> geodatabase. <br/>
+          The ArcPy site package contains the Python libraries and modules which enable you to access many ArcGIS functions from within Python.<br/>
+          Next, you will run the Buffer geoprocessing tool using Python.
+        </p>
+        <li>At the prompt in the Python window, type:<br/>
+          <pre>
+arcpy.Bu
+          </pre>
+        </li>
+        <li>Press your Tab key to choose Buffer_analysis from the drop-down list.</li>
+        <li>Type a left parenthesis to continue your line of code.</li>
+        <li>Verify that your code now looks like this:<br/>
+          <pre>
+arcpy.Buffer_analysis(
+          </pre>
+        </li>
+        <p>
+          Notice that the syntax for the Buffer tool displays in the help section of the Python window, and that the code completion provides a list of layers corresponding to the in_features.
+        </p>
+        <li>In the drop-down list, choose the <strong>denver_schools</strong> layer and press your Tab key.</li>
+        <li>Type a comma (,) and observe that the next argument for the Buffer tool (out_feature_class) is highlighted in the help and syntax section.</li>
+        <li>For out_feature_class, type "school_buffer_1000", including the quotation marks.</li>
+        <li>Type another comma (,) and then type "1000 feet" for the buffer_distance_or_field value, followed by a right parenthesis ).</li>
+        <li>Verify that your code now looks like this:<br/>
+          <pre>
+>>> arcpy.env.workspace = "C:/your_path/schools.gdb"
+>>> arcpy.Buffer_analysis("denver_schools","school_buffer_1000","1000 feet"
+          </pre>
+        </li>
+        <p>
+          Notice that the help for the Buffer tool is no longer displayed because you have finished adding all of the arguments and provided a closing parenthesis.
+        </p>
+        <li>Press Enter on your keyboard to run the Buffer tool.</li>
+      </ul>
+		</p>
+	</div>
+</div>
+
+<!-- Add hidden div to identify current active navigation item -->
+<div id="page-label" style="display:none;">4_3_pywindow</div>
+<div id="parent-page-label" style="display:none;">li_4_arcpy</div>
