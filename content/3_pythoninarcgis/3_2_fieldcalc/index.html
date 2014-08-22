@@ -1,0 +1,112 @@
+---
+title: Python in Field Calculator | Python Basics for ArcGIS - RM-URISA Workshop
+layout: default
+---
+<div class="row page-header">
+	<div class="col-md-9">
+		<h1 class="text-primary">Python in Field Calculator</h1>
+	</div>
+	<div class="col-md-3">
+		<a href="/rmurisaworkshop_pythonbasics/content/3_pythoninarcgis/3_1_label/" class="btn btn-outline btn-warning">Back</a> 
+		<a href="/rmurisaworkshop_pythonbasics/content/4_arcpy/4_1_aboutarcpy/" class="btn btn-success">Next</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+    <h4>Using Python to create a calculation expression</h4>
+    <p>
+      In this step, you will use Python in the Field Calculator to programmatically change attribute values.
+    </p>
+		<p>
+		  <ul>
+        <li>Right-click the <strong>highways</strong> layer and choose Open Attribute Table.</li>
+        <li>Notice that some highways have a value in the TRANS_TYPE field of hwy, while others have HWY. These should all use capital letters for consistency.</li>
+        <li>Right-click the TYPE field and choose Field Calculator.</li>
+        <li>At the top of the Field Calculator, notice that you have a choice of either VB Script or Python. Choose Python</li>
+        <li>Under Fields, double-click TRANS_TYPE.</li>
+        <li>Notice that !TYPE! appears in the window at the bottom of the Field Calculator. When referencing field names in the Field Calculator using Python, the field is enclosed by exclamation points.</li>
+        <li>Complete the code as follows:<br/>
+            <pre>
+!TRANS_TYPE!.replace("hwy","HWY")
+            </pre>
+            <br/>This Python code will use the replace function to replace all occurrences of "hwy" with "HWY".
+        </li>
+        <li>Click OK.</li>
+        <li>After the calculation has completed, examine the TYPE field in the attribute table.<br/>
+            Notice that the values of dr have been changed to DR.
+        </li>
+      </ul>
+		</p>
+    <h4>Exercise:</h4>
+    <p>
+      <ul>
+        <li>Right-click the <strong>denver_schools</strong> layer and choose Open Attribute Table.</li>
+        <li>Notice that some schools have a value in the <strong>schooltype</strong> field of "Senior", while others have "High". These should all be "High" for consistency.</li>
+        <li>Use the same Python function .replace() to replace all the "Senior" value with "High".</li>
+      </ul>
+    </p>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+            <i class="fa fa-lightbulb-o fa-lg"></i> <a data-toggle="collapse" href="#collapse-hint-2" class="collapsed"> Hint</a>
+          </h4>
+      </div>
+      <div id="collapse-hint-2" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p>
+              <pre>
+!schooltype!.replace("Senior","High")
+              </pre>
+            </p>
+            <p>
+              <img src="/rmurisaworkshop_pythonbasics/images/3_2_field1.png">
+            </p>
+            <br/>
+          </div>
+      </div>
+    </div> 
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+    <h4>Using Python to create multiline calculation expression</h4>
+    <p>
+      In this step, you will create a Python expression in the Field Calculator that is several lines long. This expression will create an attribute value that can be used for labeling the schools.
+    </p>
+		<p>
+		  <ul>
+        <li>Open the <strong>denver_schools</strong> attribute table.</li>
+        <li>At the top of the attribute table window, click the Table Options button and choose Add Field.</li>
+        <li>In the Add Field dialog box, do the following:<br/>
+            For Field Name, type MAP_LABEL.<br/>
+            For Type, choose Text.<br/>
+            Click OK.
+        </li>
+        <li>Now you will create an expression to combine the attribute values from the NAME and TYPE fields, 
+        and to abbreviate the school type as well. <br/>
+        For example, if the value for <strong>schooltype</strong> is "High", your calculation will change it to HS, for High School.</li>
+        <li>Open the Field Calculator for the MAP_LABEL field.</li>
+        <li>Set the Parser to Python.</li>
+        <li>Check the box next to <strong>Show Codeblock</strong>.</li>
+        <li>Notice that the bottom of the Field Calculator is now divided into two boxes:<br/>
+            the Pre-Logic Script Code, and your MAP_LABEL attribute</li>
+        <div class="alert alert-warning">
+          Simple field calculator expressions, like the one you created in the previous step, are entered directly into the Expression text box. <br/>
+          More complex expressions, such as multiline scripts and those that have looping or branching, are entered in the Codeblock boxes.
+        </div>
+        <li>You will load a Python script that is formatted specifically for use in the Field Calculator.</li>
+        <li>Click Load.</li>
+        <li>Browse to your folder, click the <strong>school_label.cal<strong> file, and click Open.</li>
+        <li>Read the code, click OK.</li>
+        <li>Examine your new calculated values in the MAP_LABEL attribute field.</li>
+        <br/><img src="/rmurisaworkshop_pythonbasics/images/3_2_field2.png"><br/>
+      </ul>
+    </p>
+	</div>
+</div>
+
+<!-- Add hidden div to identify current active navigation item -->
+<div id="page-label" style="display:none;">3_1_label</div>
+<div id="parent-page-label" style="display:none;">li_3_pythoninarcgis</div>
