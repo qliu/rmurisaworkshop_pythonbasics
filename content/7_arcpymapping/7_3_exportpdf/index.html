@@ -1,0 +1,37 @@
+---
+title: Using ArcPy.mapping to Export to PDF Map Books | Python Basics for ArcGIS - RM-URISA Workshop
+layout: default
+---
+<div class="row page-header">
+	<div class="col-md-9">
+		<h1 class="text-primary">Using ArcPy.mapping to Export maps to PDF Map Books</h1>
+	</div>
+	<div class="col-md-3">
+		<a href="/rmurisaworkshop_pythonbasics/content/7_arcpymapping/7_2_source/" class="btn btn-outline btn-warning">Back</a> 
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+    <p>Export map document to PDF</p>
+    <pre>
+>>> mxd = arcpy.mapping.MapDocument("CURRENT")
+>>> arcpy.mapping.ExportToPDF(mxd,"C:/your_path/map1.pdf")
+    </pre>
+    <p>Zoom in to Denver downtown area. Export to another map.</p>
+    <pre>
+>>> arcpy.mapping.ExportToPDF(mxd,"C:/your_path/map2.pdf")
+    </pre>
+    <p>Append your two maps to make a multiple page map book.</p>
+    <pre>
+>>> PDFdoc = arcpy.mapping.PDFDocumentCreate(r"C:/your_path/Final.pdf")
+>>> PDFdoc.appendPages("C:/your_path/map1.pdf")
+>>> PDFdoc.appendPages("C:/your_path/map2.pdf")
+>>> PDFdoc.saveAndClose()
+    </pre>
+	</div>
+</div>
+
+<!-- Add hidden div to identify current active navigation item -->
+<div id="page-label" style="display:none;">7_3_exportpdf</div>
+<div id="parent-page-label" style="display:none;">li_7_arcpymapping</div>

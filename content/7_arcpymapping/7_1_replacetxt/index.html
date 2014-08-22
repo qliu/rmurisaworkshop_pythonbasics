@@ -1,0 +1,64 @@
+---
+title: Using ArcPy.mapping to Update Texts in the Map | Python Basics for ArcGIS - RM-URISA Workshop
+layout: default
+---
+<div class="row page-header">
+	<div class="col-md-9">
+		<h1 class="text-primary">Using ArcPy.mapping to Update Texts in the Map</h1>
+	</div>
+	<div class="col-md-3">
+		<a href="/rmurisaworkshop_pythonbasics/content/6_batchpy/6_2_pytool/" class="btn btn-outline btn-warning">Back</a> 
+		<a href="/rmurisaworkshop_pythonbasics/content/7_arcpymapping/7_2_source/" class="btn btn-success">Next</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+    <h3 class="text-info">ArcPy.mapping</h3>
+    <p>
+      <strong>Arcpy.mapping</strong> is a Python scripting module that is part of the ArcPy site package.<br/>
+      It was designed primarily to manipulate the contents of existing map documents (.mxd) and layer files (.lyr).<br/>
+      It also provides functions to automate exporting and printing.
+    </p>
+    <h4>Referencing an existing map document.</h4>
+    <p>
+      Typically, one of the first operations you do with an arcpy.mapping script is reference an existing map document (.mxd) or layer file (.lyr) 
+      that you want to do something with.
+    </p>
+    <p>Referencing current map document</p>
+    <pre>
+>>> mxd = arcpy.mapping.MapDocument("CURRENT")
+    </pre>
+    <p>Change map document properties</p>
+    <pre>
+>>> mxd.author = "YOUR NAME GOES HERE"
+    </pre>
+    <p>In ArcMap, click File > Map Document Properties. You should see that the author property is set to your name.</p>
+    <p>Save map document</p>
+    <pre>
+>>> mxd.save()
+    </pre>
+    <p>Get current map document file path</p>
+    <pre>
+>>> mxd.filePath
+    </pre>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+    <h4>Update texts in the map.</h4>
+    <p>For all the text element on the layout map, replace the typo "Denvre" with "Denver".</p>
+    <pre>
+>>> mxd = arcpy.mapping.MapDocument("CURRENT")
+>>> for elm in arcpy.mapping.ListLayoutElements(mxd,"TEXT_ELEMENT"):
+...     elm.text.replace("Denvre","Denver")
+>>> arcpy.RefreshActiveView()
+>>> mxd.save()
+    </pre>
+	</div>
+</div>
+
+<!-- Add hidden div to identify current active navigation item -->
+<div id="page-label" style="display:none;">7_1_replacetxt</div>
+<div id="parent-page-label" style="display:none;">li_7_arcpymapping</div>

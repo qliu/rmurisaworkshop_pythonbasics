@@ -1,0 +1,67 @@
+---
+title: Batch processing with ArcPy in Python | Python Basics for ArcGIS - RM-URISA Workshop
+layout: default
+---
+<div class="row page-header">
+	<div class="col-md-9">
+		<h1 class="text-primary">Batch processing with ArcPy in Python</h1>
+	</div>
+	<div class="col-md-3">
+		<a href="/rmurisaworkshop_pythonbasics/content/5_modelbuilder/5_4_py/" class="btn btn-outline btn-warning">Back</a> 
+		<a href="/rmurisaworkshop_pythonbasics/content/6_batchpy/6_2_pytool/" class="btn btn-success">Next</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+    <h4>Iterate feature class to execute geoprocessing tools.</h4>
+		<p>
+      <i class="fa fa-cloud-download fa-lg"></i> <a target="_blank" href="/rmurisaworkshop_pythonbasics/downloads/6_1_iteration1.py">Download the script.</a>
+    </p>
+    <p>
+      <pre>
+import arcpy
+
+# Set the work space, replace "your_path" with your working directory
+arcpy.env.workspace = "C:/your_path/schools.gdb"
+
+# Use the ListFeatureClasses function
+# to return a list of feature classes under workspace
+# whose name start with "schools".
+fc_list = arcpy.ListFeatureClasses("schools*")
+
+# Loop through feature class list, execute buffer analysis.
+for fc in fc_list:
+	arcpy.Buffer_analysis(fc, fc + "_buffer_800", "800 Feet")
+      </pre>
+    </p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+    <h4>Iterate a list of buffer distance to create multiple buffer outputs from one layer.</h4>
+		<p>
+      <i class="fa fa-cloud-download fa-lg"></i> <a target="_blank" href="/rmurisaworkshop_pythonbasics/downloads/6_1_iteration2.py">Download the script.</a>
+    </p>
+    <p>
+      <pre>
+import arcpy
+
+# Set the work space, replace "youu_path" with your working directory
+arcpy.env.workspace = "C:/youu_path/schools.gdb"
+
+# Create a list to store buffer distances
+buffer_list = [1500,2500,3500]
+
+# Loop through buffer distance list, execute buffer analysis.
+for buffer in buffer_list:
+    arcpy.Buffer_analysis("sunnyside_schools", "sunnyside_schools_buffer_" + str(buffer), str(buffer) + " Feet")
+      </pre>
+    </p>
+	</div>
+</div>
+
+<!-- Add hidden div to identify current active navigation item -->
+<div id="page-label" style="display:none;">6_1_loop</div>
+<div id="parent-page-label" style="display:none;">li_6_batchpy</div>

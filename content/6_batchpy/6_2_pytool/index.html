@@ -1,0 +1,81 @@
+---
+title: Create Script Tools in Python | Python Basics for ArcGIS - RM-URISA Workshop
+layout: default
+---
+<div class="row page-header">
+	<div class="col-md-9">
+		<h1 class="text-primary">Create Script Tools in Python</h1>
+	</div>
+	<div class="col-md-3">
+		<a href="/rmurisaworkshop_pythonbasics/content/6_batchpy/6_2_pytool/" class="btn btn-outline btn-warning">Back</a> 
+		<a href="/rmurisaworkshop_pythonbasics/content/7_arcpymapping/7_1_replacetxt/" class="btn btn-success">Next</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+    <h4>Edit a script to accept user input</h4>
+		<p>
+      Open <strong>6_2_buffer_multiple.py</strong> with Python IDLE.
+    </p>
+    <p>
+      We will modify the Python script to accept user input rather than using hard-coded values using <code>arcpy.GetParameterAsText()</code>.
+    </p>
+    <h4>Create a script tool<h4/>
+    <p>
+      We will create a tool in ArcToolbox from the modified Python script. <br/>
+      Once a script is part of ArcToolbox, it behaves like any other tools, 
+      which means you can run the script from a dialog box, from the Python window, or from a model.
+    </p>
+    <p>
+      <ul>
+        <p>Create a new toolbox:</p>
+        <li>Right-click the Data folder and choose New > Toolbox.</li>
+        <li>Right-click Toolbox and choose Properties. Change your toolbox Name and Label properties.</li>
+        <p>Next, you will add your script as a tool in your new toolbox.</p>
+        <li>Right-click the new toolbox, choose Add > Script.</li>
+        <p>The Add Script wizard opens.<br/>
+           The first panel asks for the script tool's Name, Label, and Description. <br/>
+           The Name is used to execute the script tool from the Command Line window or from another script. <br/>
+           The Label is the display name for the script, and will determine how it appears in the ArcToolbox window.<br/>
+        </p>
+        <li>In the Add Script wizard, set the following:<br/>
+            Name: BufferMultiple<br/>
+            Label: Buffer Multiple<br/>
+            Description: Buffer multiple feature classes
+        </li>
+        <li>Click Next.</li>
+        <li>Click the Browse button</li>
+        <li>Add modified python script or <strong>6_2_buffer_multiple_final.py</strong></li>
+        <li>Click Next.</li>
+        <p>Now you will enter the three script arguments for the inFCs, outWS, and dist variables that you coded in a previous step.</p>
+        <li>On this panel, do the following:<br/>
+            For the first argument, click in the first empty field under Display Name and type <strong>Feature classes to buffer</strong>.<br/>
+            Under Data Type, click in the first empty row and choose <strong>Feature Layer</strong> from the drop-down list.<br/>
+            Under Parameter Properties, click in the Value column for <strong>MultiValue</strong> and choose <strong>Yes</strong> from the drop-down list.<br/>
+        </li>
+        <p>
+          By setting the MultiValue property to Yes, you are enabling your script to accept multiple feature classes as input.<br/>
+          The input feature classes will be associated with the arcpy.GetParameterAsText(0) function, 
+          which will set the value of the <strong>in_fcs</strong> variable. The <strong>in_fcs</strong> variable will store the list of feature classes.
+        </p>
+        <li>For the second argument, specify the following:<br/>
+            Display Name: <strong>Output location</strong><br/>
+            Data Type: <strong>Workspace or Feature Dataset</strong><br/>
+            Under Parameter Properties, for Environment: <strong>Current Workspace [workspace]</strong>
+        </li>
+        <p>The Output location will be associated with the arcpy.GetParameterAsText(1) function, which will set the value of the outFC variable.</p>
+        <li>For the last argument (the buffer distance), set the following:<br/>
+            Display Name: <strong>Distance</strong><br/>
+            Data Type: <strong>Linear unit</strong>
+        </li>
+        <li>Click Finish.</li>
+        <li>Run your script tool.</li>
+      </ul>
+    </p>
+	</div>
+</div>
+
+<!-- Add hidden div to identify current active navigation item -->
+<div id="page-label" style="display:none;">6_2_pytool</div>
+<div id="parent-page-label" style="display:none;">li_6_batchpy</div>

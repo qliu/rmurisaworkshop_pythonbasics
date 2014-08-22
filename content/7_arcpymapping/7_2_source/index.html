@@ -1,0 +1,44 @@
+---
+title: Using ArcPy.mapping to Update Data Source | Python Basics for ArcGIS - RM-URISA Workshop
+layout: default
+---
+<div class="row page-header">
+	<div class="col-md-9">
+		<h1 class="text-primary">Using ArcPy.mapping to Update Data Source</h1>
+	</div>
+	<div class="col-md-3">
+		<a href="/rmurisaworkshop_pythonbasics/content/7_arcpymapping/7_1_replacetxt/" class="btn btn-outline btn-warning">Back</a> 
+		<a href="/rmurisaworkshop_pythonbasics/content/7_arcpymapping/7_3_exportpdf/" class="btn btn-success">Next</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+    <p>
+      <strong>Arcpy.mapping</strong> can update, replace, and repair broken data source.
+    </p>
+    <p>
+      Imagine that you have migrated all of the shapefiles to a file geodatabase. You want to update all the data source for the map document.
+      In this exercise, you will use Python to change the source of the layers in your map from shapefiles to their equivalent geodatabase feature classes. 
+      You will then save a copy of your map document with the layers that point to the new geodatabase feature classes.
+    </p>
+    <p>Open map document <strong>DenverSchools_mapping.mxd</strong></p>
+    <p>Referencing current map document</p>
+    <pre>
+>>> mxd = arcpy.mapping.MapDocument("CURRENT")
+    </pre>
+    <p>Replace workspace for the files in the folder with geodatabase</p>
+    <pre>
+>>> mxd.replaceWorkspaces("C:/test","SHAPEFILE_WORKSPACE","C:/test/schools.gdb","FILEGDB_WORKSPACE")
+    </pre>
+    <p>Open the layer properties for each layer. The path should has been changed. The data source now points to the schools geodatabase.</p>
+    <p>Save map document</p>
+    <pre>
+>>> mxd.save()
+    </pre>
+	</div>
+</div>
+
+<!-- Add hidden div to identify current active navigation item -->
+<div id="page-label" style="display:none;">7_2_source</div>
+<div id="parent-page-label" style="display:none;">li_7_arcpymapping</div>
