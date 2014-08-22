@@ -1,0 +1,62 @@
+---
+title: Python in Label Expression | Python Basics for ArcGIS - RM-URISA Workshop
+layout: default
+---
+<div class="row page-header">
+	<div class="col-md-9">
+		<h1 class="text-primary">Python in Label Expression</h1>
+	</div>
+	<div class="col-md-3">
+		<a href="/rmurisaworkshop_pythonbasics/content/2_pythonbasics/2_2_python/2_2_8_pythonerror/" class="btn btn-outline btn-warning">Back</a> 
+		<a href="/rmurisaworkshop_pythonbasics/content/3_pythoninarcgis/3_2_fieldcalc/" class="btn btn-success">Next</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+    <h4>Using Python to Update Labels</h4>
+    <p class="text-info">Lable Highways with Python</p>
+    <p>
+      The label expression allows you to alter how a label is displayed, 
+      without having to change the field values in the attribute table. 
+      Currently, the Highways label expression is [NAME], which represents each of the highway numbers.
+    </p>
+		<p>
+		  <ol>
+        <li>In the Table of Contents, right-click highways and choose Properties.</li>
+        <li>In the Layer Properties dialog box, click the Labels tab.</li>
+        <li>In the Text String section, click Expression.</li>
+        <li>Using Python to concatenate text "Highway " with the [NAME] field.</li>
+      </ol>
+		</p>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          <h4 class="panel-title">
+            <i class="fa fa-lightbulb-o fa-lg"></i> <a data-toggle="collapse" href="#collapse-hint-2" class="collapsed" style="color:white;"> Hint</a>
+          </h4>
+      </div>
+      <div id="collapse-hint-2" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p>
+              <ul>
+                <li>In the Label Expression dialog box: For Parser, choose Python. Type in code:
+            <pre>
+"Highway " + [NAME]
+            </pre>
+                </li>
+                <li>Click Verify.
+                <li>In the Expression Verification dialog box, confirm that the Sample Label reads Highway 100.</li>
+                <li>Click OK to close the Expression Verification and Label Expression dialog boxes.</li>
+                <li>Click OK to close the Layer Properties dialog box, which will update the label expression.</li>
+              </ul>
+            </p>
+            <br/>
+          </div>
+      </div>
+    </div> 
+	</div>
+</div>
+
+<!-- Add hidden div to identify current active navigation item -->
+<div id="page-label" style="display:none;">3_1_label</div>
+<div id="parent-page-label" style="display:none;">li_3_pythoninarcgis</div>
