@@ -42,7 +42,6 @@ layout: default
 			<i class="fa fa-link fa-lg"></i> List of Python Built-in Functions: <a target="_blank" href="https://docs.python.org/2/library/functions.html">https://docs.python.org/2/library/functions.html</a>
 		  </p>
           <pre>
-Hellow World
 >>> a = 1
 >>> a
 1
@@ -103,12 +102,6 @@ u'AlreadyInitialized'
         <div class="tab-pane fade" id="custom-pills">
           <h4>User-defined Function</h4>
           <p>
-            There may be a situation when you need to execute a block of code several number of times. 
-            A loop statement allows us to execute a statement or group of statements multiple times. 
-          </p>
-          <img src="/rmurisaworkshop_pythonbasics/images/2_2_6_for.jpg">
-          <h4>Loop Statements</h4>
-          <p>
 			<ul>
 				<li>Function blocks begin with the keyword <strong><i>def</i></strong> followed by the function name and parentheses ( ( ) ).</li>
 				<li>Any input parameters or arguments should be placed within these parentheses. You can also define parameters inside these parentheses.</li>
@@ -143,20 +136,20 @@ for nbhood in nbhoods:
 
 def lowercase(str):
     new_str = str.lower()
+    print new_str
     return new_str
 
 def uppercase(str):
     new_str = str.upper()
+    print new_str
     return new_str
 
 nbhoods = ["baker","BAKER","Athmar Park"]
 for nbhood in nbhoods:
     if nbhood == "BAKER":
         new_nbhood = lowercase(nbhood) # call function lowercase()
-        print new_nbhood
     elif nbhood == "baker":
         new_nbhood = uppercase(nbhood) # call function uppercase()
-        print new_nbhood
     else:
         print "Not Baker Neighborhood"
 		  </pre>
@@ -166,19 +159,19 @@ for nbhood in nbhoods:
 
 def lowercase(str):
     new_str = str.lower()
+    print new_str
     return new_str
 
 def uppercase(str):
     new_str = str.upper()
+    print new_str
     return new_str
 
 def changename(nbhood):
     if nbhood == "BAKER":
         new_nbhood = lowercase(nbhood) # call function lowercase()
-        print new_nbhood
     elif nbhood == "baker":
         new_nbhood = uppercase(nbhood) # call function uppercase()
-        print new_nbhood
     else:
         print "Not Baker Neighborhood"
 
@@ -228,12 +221,14 @@ schools = ["Elementary","Senior",""]
 for school in schools:
     printschooltype(school) # call function printschooltype()
 
-# print modified school list
+# print school list
 print schools
                           </code>
                         </pre>
                         <br/>
                         <i class="fa fa-cloud-download fa-lg"></i> <a target="_blank" href="/rmurisaworkshop_pythonbasics/downloads/2_2_7_challenge_3_answer.py">Download the answer</a>
+                        <br/>
+                        <i class="fa fa-cloud-download fa-lg"></i> <a target="_blank" href="/rmurisaworkshop_pythonbasics/downloads/2_2_7_challenge_3_answer_2.py">Download an even-better answer</a>
                       </div>
                   </div>
               </div> 

@@ -21,5 +21,5 @@ schools = ["Elementary","Senior",""]
 for school in schools:
     printschooltype(school) # call function printschooltype()
 
-# print modified school list
+# print school list
 print schools
