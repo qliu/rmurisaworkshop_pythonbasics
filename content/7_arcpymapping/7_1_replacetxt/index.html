@@ -52,7 +52,7 @@ layout: default
     <pre>
 >>> mxd = arcpy.mapping.MapDocument("CURRENT")
 >>> for elm in arcpy.mapping.ListLayoutElements(mxd,"TEXT_ELEMENT"):
-...     elm.text.replace("Denvre","Denver")
+...     elem.text = elm.text.replace("Denvre","Denver")
 >>> arcpy.RefreshActiveView()
 >>> mxd.save()
     </pre>
