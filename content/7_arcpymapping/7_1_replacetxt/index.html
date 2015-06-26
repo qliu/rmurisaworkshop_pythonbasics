@@ -51,7 +51,7 @@ layout: default
     <p>For all the text element on the layout map, replace the typo "Denvre" with "Denver".</p>
     <pre>
 >>> mxd = arcpy.mapping.MapDocument("CURRENT")
->>> for elm in arcpy.mapping.ListLayoutElements(mxd,"TEXT_ELEMENT"):
+>>> for elem in arcpy.mapping.ListLayoutElements(mxd,"TEXT_ELEMENT"):
 ...     elem.text = elm.text.replace("Denvre","Denver")
 >>> arcpy.RefreshActiveView()
 >>> mxd.save()
